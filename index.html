@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Display a popup</title>
+    <title>Music mapmadness18</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
@@ -15,15 +15,19 @@
 
 <style>
     .mapboxgl-popup {
+      position: absolute;
+        width: 330px;
         border-radius: 6px;
-        padding: 5px 10px 0px 0px;
+        padding: 5px 10px 0px 5px;
         font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     }
     .audio {
+      position: relative;
       padding: 10px;
     }
 
     iframe{
+      position: relative;
       padding: 10px;
     }
 
@@ -47,8 +51,8 @@ mapboxgl.accessToken = "pk.eyJ1IjoibGVuYWVtYXlhIiwiYSI6ImNpa3VhbXE5ZjAwMXB3eG00a
 var map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/lenaemaya/cjey8ks7w404q2qpezuwj65s8",
-  center: [-83.056640625,42.35042512243457],
-zoom: 8
+  center: [9.663612,35.129999],
+zoom: 1
 });
 
 
@@ -64,7 +68,7 @@ map.on('load', function () {
                 "features": [{
                     "type": "Feature",
                     "properties": {
-                        "description": '<audio class="audio" src="New_York.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50" loop="false" autostart="false"></audio><p></p><strong>Frank Sinatra</strong><p>New York</p>',
+                        "description": '<audio class="audio" src="New_York.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>Frank Sinatra</strong><p>New York</p>',
                         "name": "New York"
                     },
                     "geometry": {
@@ -74,7 +78,7 @@ map.on('load', function () {
                 },{
                     "type": "Feature",
                     "properties": {
-                        "description": '<audio class="audio" src="New_York.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50" loop="false" autostart="false"></audio><p></p><strong>Frank Sinatra</strong><p>New York</p>',
+                        "description": '<audio class="audio" src="Panic In Detroit.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>David Bowie</strong><p>Panic In Detroit</p>',
                         "name": "Detroit"
                     },
                     "geometry": {
@@ -84,7 +88,7 @@ map.on('load', function () {
                 }, {
                     "type": "Feature",
                     "properties": {
-                        "description": '<audio class="audio" src="New_York.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50" loop="false" autostart="false"></audio><p></p><strong>Frank Sinatra</strong><p>New York</p>',
+                        "description": '<audio class="audio" src="Sweet Home Chicago.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>The Blues Brothers</strong><p>Sweet Home Chicago</p>',
                         "name": "Chicago"
                     },
                     "geometry": {
@@ -94,27 +98,28 @@ map.on('load', function () {
                 }, {
                     "type": "Feature",
                     "properties": {
-                        "description": '<audio src="San_Francisco.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50"  loop="false" autostart="false" style="white"></audio><p></p><strong>Scott McKenzie</strong><p>San Francisco</p>',
+                        "description": '<audio src="San_Francisco.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>Scott McKenzie</strong><p>San Francisco</p>',
                         "name": "San Francisco"
                     },
                     "geometry": {
                         "type": "Point",
                         "coordinates": [-122.431640625,37.77071473849609]
-                    }
-                }, {
+                    }},
+                // }, {
+                //     "type": "Feature",
+                //     "properties": {
+                //         "description":  '<audio src="another_day.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50" loop="false" autostart="false"></audio>',
+                //         "name": "Santa Fe"
+                //     },
+                //     "geometry": {
+                //         "type": "Point",
+                //         "coordinates": [-118.06809425354004,33.947916898356404]
+                //     }
+                // }, {
+                    {
                     "type": "Feature",
                     "properties": {
-                        "description":  '<audio src="another_day.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50" loop="false" autostart="false" style="white"></audio>',
-                        "name": "Santa Fe"
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [-118.06809425354004,33.947916898356404]
-                    }
-                }, {
-                    "type": "Feature",
-                    "properties": {
-                        "description": '<audio src="The_House_of_the_Rising_Sun.mp3" controls> <embed src="/music/good_enough.mp3" width="50" height="50" loop="false" autostart="false" style="white"></audio>',
+                        "description": '<audio src="Rising_Sun.mp3" controls> <embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>The Animals</strong><p>The House of the Rising Sun</p>',
                         "name": "New Orleans"
                     },
                     "geometry": {
@@ -124,7 +129,7 @@ map.on('load', function () {
                 }, {
                     "type": "Feature",
                     "properties": {
-                        "description": '<audio src="Pasadena.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50" loop="false" autostart="false" style="white"></audio>',
+                        "description": '<audio src="Pasadena.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>Maywood</strong><p>Pasadena</p>',
                         "name": "Pasadena"
                     },
                     "geometry": {
@@ -175,14 +180,12 @@ map.on('load', function () {
     });
 
 
-  map.on('click', 'places', function (e) {
+      map.on('click', 'places', function (e) {
           var coordinates = e.features[0].geometry.coordinates.slice();
           var description = e.features[0].properties.description;
 
           map.flyTo({center: e.features[0].geometry.coordinates, zoom: 15, pitch: 60} );
-          // Ensure that if the map is zoomed out such that multiple
-          // copies of the feature are visible, the popup appears
-          // over the copy being pointed to.
+
           while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
               coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
           }
@@ -195,14 +198,11 @@ map.on('load', function () {
               .addTo(map);
       });
 
-
-
-      // Change the cursor to a pointer when the mouse is over the places layer.
       map.on('mouseenter', 'places', function () {
           map.getCanvas().style.cursor = 'pointer';
       });
 
-      // Change it back to a pointer when it leaves.
+
       map.on('mouseleave', 'places', function () {
           map.getCanvas().style.cursor = '';
       });
