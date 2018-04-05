@@ -57,7 +57,7 @@ zoom: 1
 
 
 map.on('load', function () {
-    
+
     map.addLayer({
         "id": "places",
         "type": "symbol",
@@ -68,7 +68,7 @@ map.on('load', function () {
                 "features": [{
                     "type": "Feature",
                     "properties": {
-                        "description": '<audio class="audio" src="New_York.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>Frank Sinatra</strong><p>New York</p>',
+                        "description": '<audio class="audio" src="./data/New_York.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>Frank Sinatra</strong><p>New York</p>',
                         "name": "New York"
                     },
                     "geometry": {
@@ -78,7 +78,7 @@ map.on('load', function () {
                 },{
                     "type": "Feature",
                     "properties": {
-                        "description": '<audio class="audio" src="Panic In Detroit.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>David Bowie</strong><p>Panic In Detroit</p>',
+                        "description": '<audio class="audio" src="./data/Panic In Detroit.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>David Bowie</strong><p>Panic In Detroit</p>',
                         "name": "Detroit"
                     },
                     "geometry": {
@@ -88,7 +88,7 @@ map.on('load', function () {
                 }, {
                     "type": "Feature",
                     "properties": {
-                        "description": '<audio class="audio" src="Sweet Home Chicago.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>The Blues Brothers</strong><p>Sweet Home Chicago</p>',
+                        "description": '<audio class="audio" src="./data/Sweet Home Chicago.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>The Blues Brothers</strong><p>Sweet Home Chicago</p>',
                         "name": "Chicago"
                     },
                     "geometry": {
@@ -98,7 +98,7 @@ map.on('load', function () {
                 }, {
                     "type": "Feature",
                     "properties": {
-                        "description": '<audio src="San_Francisco.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>Scott McKenzie</strong><p>San Francisco</p>',
+                        "description": '<audio src="./data/San_Francisco.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>Scott McKenzie</strong><p>San Francisco</p>',
                         "name": "San Francisco"
                     },
                     "geometry": {
@@ -108,7 +108,7 @@ map.on('load', function () {
                 // }, {
                 //     "type": "Feature",
                 //     "properties": {
-                //         "description":  '<audio src="another_day.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50" loop="false" autostart="false"></audio>',
+                //         "description":  '<audio src="./data/another_day.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50" loop="false" autostart="false"></audio>',
                 //         "name": "Santa Fe"
                 //     },
                 //     "geometry": {
@@ -119,7 +119,7 @@ map.on('load', function () {
                     {
                     "type": "Feature",
                     "properties": {
-                        "description": '<audio src="Rising_Sun.mp3" controls> <embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>The Animals</strong><p>The House of the Rising Sun</p>',
+                        "description": '<audio src="./data/Rising_Sun.mp3" controls> <embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>The Animals</strong><p>The House of the Rising Sun</p>',
                         "name": "New Orleans"
                     },
                     "geometry": {
@@ -129,7 +129,7 @@ map.on('load', function () {
                 }, {
                     "type": "Feature",
                     "properties": {
-                        "description": '<audio src="Pasadena.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>Maywood</strong><p>Pasadena</p>',
+                        "description": '<audio src="./data/Pasadena.mp3" controls>	<embed src="/music/good_enough.mp3" loop="false" autostart="false"></audio><p></p><strong>Maywood</strong><p>Pasadena</p>',
                         "name": "Pasadena"
                     },
                     "geometry": {
@@ -207,7 +207,7 @@ map.on('load', function () {
           map.getCanvas().style.cursor = '';
       });
 
-
+      map.addControl(new mapboxgl.NavigationControl());
 
 </script>
 
