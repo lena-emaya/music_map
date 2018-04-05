@@ -15,11 +15,29 @@
 
 <style>
     .mapboxgl-popup {
-
-        color: black;
+        border-radius: 6px;
+        padding: 5px 10px 0px 0px;
         /* background-color: red; */
         font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     }
+    .audio {
+      padding: 10px;
+    }
+
+    iframe{
+      padding: 10px;
+    }
+
+    strong {
+      padding-left: 10px;
+      color: #4688F1;
+    }
+
+    p {
+      padding-left: 10px;
+      color: #5A5A5A;
+    }
+
 </style>
 <div id='map'></div>
 <script>
@@ -44,7 +62,7 @@ map.on('load', function () {
     // Add a layer showing the places.
     map.addLayer({
         "id": "places",
-        "type": "circle",
+        "type": "symbol",
         "source": {
             "type": "geojson",
             "data": {
@@ -52,27 +70,30 @@ map.on('load', function () {
                 "features": [{
                     "type": "Feature",
                     "properties": {
-                        "description": '<audio src="New_York.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50" loop="false" autostart="false" style="white"></audio>',
+                        "description": '<audio class="audio" src="New_York.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50" loop="false" autostart="false"></audio><p></p><strong>Frank Sinatra</strong><p>New York</p>',
                         "name": "New York"
                     },
                     "geometry": {
                         "type": "Point",
                         "coordinates": [-73.992919921875,40.72228267283148]
                     }
-                }, {
+                },
+                // {
+                //     "type": "Feature",
+                //     "properties": {
+                //
+                //         "description": '<audio src="Philadelphia_Freedom.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50"  loop="false" autostart="false" style="white"></audio>',
+                //         "name": "Philadelphia"
+                //     },
+                //     "geometry": {
+                //         "type": "Point",
+                //         "coordinates": [-75.16845703124999,39.95185892663005]
+                //     }
+                // },
+                {
                     "type": "Feature",
                     "properties": {
-                        "description": '<audio src="Philadelphia_Freedom.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50"  loop="false" autostart="false" style="white"></audio><p></p><strong>Philadelphia Freedom</strong>',
-                        "name": "Philadelphia"
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [-75.16845703124999,39.95185892663005]
-                    }
-                }, {
-                    "type": "Feature",
-                    "properties": {
-                        "description": "<strong>Big Backyard Beach Bash and Wine Fest</strong><p>EatBar (2761 Washington Boulevard Arlington VA) is throwing a <a href=\"http://tallulaeatbar.ticketleap.com/2012beachblanket/\" target=\"_blank\" title=\"Opens in a new window\">Big Backyard Beach Bash and Wine Fest</a> on Saturday, serving up conch fritters, fish tacos and crab sliders, and Red Apron hot dogs. 12:00-3:00 p.m. $25.grill hot dogs.</p>",
+                        "description": '<audio class="audio" src="New_York.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50" loop="false" autostart="false"></audio><p></p><strong>Frank Sinatra</strong><p>New York</p>',
                         "name": "Detroit"
                     },
                     "geometry": {
@@ -82,7 +103,7 @@ map.on('load', function () {
                 }, {
                     "type": "Feature",
                     "properties": {
-                        "description": "<strong>Ballston Arts & Crafts Market</strong><p>The <a href=\"http://ballstonarts-craftsmarket.blogspot.com/\" target=\"_blank\" title=\"Opens in a new window\">Ballston Arts & Crafts Market</a> sets up shop next to the Ballston metro this Saturday for the first of five dates this summer. Nearly 35 artists and crafters will be on hand selling their wares. 10:00-4:00 p.m.</p>",
+                        "description": '<audio class="audio" src="New_York.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50" loop="false" autostart="false"></audio><p></p><strong>Frank Sinatra</strong><p>New York</p>',
                         "name": "Chicago"
                     },
                     "geometry": {
@@ -92,7 +113,7 @@ map.on('load', function () {
                 }, {
                     "type": "Feature",
                     "properties": {
-                        "description": "<strong>Seersucker Bike Ride and Social</strong><p>Feeling dandy? Get fancy, grab your bike, and take part in this year's <a href=\"http://dandiesandquaintrelles.com/2012/04/the-seersucker-social-is-set-for-june-9th-save-the-date-and-start-planning-your-look/\" target=\"_blank\" title=\"Opens in a new window\">Seersucker Social</a> bike ride from Dandies and Quaintrelles. After the ride enjoy a lawn party at Hillwood with jazz, cocktails, paper hat-making, and more. 11:00-7:00 p.m.</p>",
+                        "description": '<audio src="San_Francisco.mp3" controls>	<embed src="/music/good_enough.mp3" width="50" height="50"  loop="false" autostart="false" style="white"></audio><p></p><strong>Philadelphia Freedom</strong>',
                         "name": "San Francisco"
                     },
                     "geometry": {
@@ -132,20 +153,30 @@ map.on('load', function () {
                 }, {
                     "type": "Feature",
                     "properties": {
-                        "description": '<iframe width="350" height="210" src="https://www.youtube.com/embed/NvS351QKFV4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>',
+                        "description": '<iframe width="300" height="170" src="https://www.youtube.com/embed/NvS351QKFV4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen color="white"></iframe><p></p><strong>Dschinghis Khan</strong><p>Moskau</p>',
                         "name": "Moscow"
                     },
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [37.6171875,55.74566603524846]
+                        "coordinates": [37.617037296295166,55.751305971950934]
                     }
                 }
               ]
             }
         },
-        "paint": {
-            "circle-radius": 10,
-            "circle-color": "#fff"
+        "layout": {
+          "icon-image": "music-15",
+          "icon-opacity": 0.6,
+            "text-field": "{name}",
+
+            "text-color": "#4688F1",
+            "text-anchor": "top",
+            "text-offset": [0,0.65],
+            "text-font": ["Arial Unicode MS Bold"],
+            "text-size": {
+              "base": 1.25,
+              "stops": [[4, 12], [13, 32]]
+            }
         }
     });
   });
@@ -154,6 +185,7 @@ map.on('load', function () {
           var coordinates = e.features[0].geometry.coordinates.slice();
           var description = e.features[0].properties.description;
 
+          map.flyTo({center: e.features[0].geometry.coordinates, zoom: 12} );
           // Ensure that if the map is zoomed out such that multiple
           // copies of the feature are visible, the popup appears
           // over the copy being pointed to.
@@ -168,6 +200,8 @@ map.on('load', function () {
 
               .addTo(map);
       });
+
+
 
       // Change the cursor to a pointer when the mouse is over the places layer.
       map.on('mouseenter', 'places', function () {
